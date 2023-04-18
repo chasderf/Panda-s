@@ -1,0 +1,39 @@
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+
+x = df["Calories"].mean()
+
+df["Calories"].fillna(x, inplace = True)
+
+print(df.to_string())
+
+#As you can see in row 18 and 28, the empty values from "Calories" was replaced with the mean: 304.68
+
+
+
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+
+x = df["Calories"].median()
+
+df["Calories"].fillna(x, inplace = True)
+
+print(df.to_string())
+
+#As you can see in row 18 and 28, the empty values from "Calories" was replaced with the median: 291.2
+
+
+
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+
+x = df["Calories"].mode()[0]
+
+df["Calories"].fillna(x, inplace = True)
+
+print(df.to_string())
+
+#As you can see in row 18 and 28, the empty value from "Calories" was replaced with the mode: 300.0
